@@ -1,0 +1,61 @@
+<md-card>
+  <form *ngIf="building">
+    <md-card-content>
+
+      <md-input-container class="full-width">
+        <input md-input placeholder="Название" name="name" [(ngModel)]="building.caption">
+      </md-input-container>
+
+      <md-input-container class="full-width">
+        <textarea md-input placeholder="Описание" name="description" [(ngModel)]="building.description"></textarea>
+      </md-input-container>
+
+      <md-input-container>
+        <input md-input placeholder="Номер дома" name="house_num" [(ngModel)]="building.house_num">
+      </md-input-container>
+
+      <md-input-container>
+        <input md-input placeholder="Количество этажей" name="floor" [(ngModel)]="building.floor_count">
+      </md-input-container>
+
+      <md-input-container>
+        <input md-input placeholder="Материал" name="material" [(ngModel)]="building.material">
+      </md-input-container>
+
+      <md-input-container>
+        <input md-input placeholder="Минимальная цена за кв.м" name="min_price_area" [(ngModel)]="building.min_price_area">
+      </md-input-container>
+
+      <md-input-container class="full-width">
+        <input md-input placeholder="Аккредитация" name="accreditation" [(ngModel)]="building.accreditation">
+      </md-input-container>
+
+      <md-input-container>
+        <input md-input placeholder="Военная ипотека" name="military" [(ngModel)]="building.military">
+      </md-input-container>
+
+      <md-input-container>
+        <input md-input placeholder="Опубликовано" name="publicate" [(ngModel)]="building.publicate">
+      </md-input-container>
+
+      <md-input-container>
+        <input md-input placeholder="Улица" name="street" [(ngModel)]="building.street_id">
+      </md-input-container>
+
+      <md-input-container>
+        <input md-input placeholder="Район" name="district" [(ngModel)]="building.district">
+      </md-input-container>
+
+      <md-input-container class="full-width">
+        <input md-input placeholder="Координаты" name="yandexmap_coords" [(ngModel)]="building.yandexmap_coords">
+      </md-input-container>
+
+      <md-card-actions class="button-row">
+        <button md-raised-button color="accent" (click)="back()">Назад</button>
+        <button md-raised-button color="primary" (click)='saveBuilding()'>Сохранить</button>
+      </md-card-actions>
+
+    </md-card-content>
+    
+  </form>
+</md-card>

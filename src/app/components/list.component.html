@@ -1,0 +1,46 @@
+<md-card>
+  <md-card-content>
+    <md-tab-group>
+      <md-tab label="Новостройки">
+        <md-list>
+          <h3 md-subheader>НОВОСТРОЙКИ</h3>
+          <md-list-item *ngFor="let building of buildings">
+            <button md-list-avatar md-icon-button [mdMenuTriggerFor]="menu">
+              <md-icon>more_vert</md-icon>
+            </button>
+            <md-menu #menu="mdMenu">
+              <button md-menu-item routerLink="building/{{building.building_id}}">
+                <md-icon>edit</md-icon> 
+                Редактировать
+              </button>
+              <button md-menu-item (click)="deleteBuilding(building)"><md-icon>delete</md-icon> Удалить</button>
+            </md-menu>
+            <h4 md-line>{{building.caption}}</h4>
+            <button md-icon-button (click)='changeVisisbility(building)'>
+              <md-icon *ngIf="building.publicate === 'y'">visibility</md-icon>
+              <md-icon *ngIf="building.publicate !== 'y'">visibility_off</md-icon>
+            </button>
+          </md-list-item>
+        </md-list>
+      </md-tab>
+      <md-tab label="Подрядчики">
+        <md-list>
+          <h3 md-subheader>ПОДРЯДЧИКИ</h3>
+          <md-list-item *ngFor="let realtor of members">
+            <button md-list-avatar md-icon-button [mdMenuTriggerFor]="menu">
+              <md-icon>more_vert</md-icon>
+            </button>
+            <md-menu #menu="mdMenu">
+              <button md-menu-item routerLink="realtor/{{realtor.acc_id}}">
+                <md-icon>edit</md-icon> 
+                Редактировать
+              </button>
+              <button md-menu-item (click)="deleteRealtor(realtor)"><md-icon>delete</md-icon> Удалить</button>
+            </md-menu>
+            <h4 md-line>{{realtor.fio}}</h4>
+          </md-list-item>
+        </md-list>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
