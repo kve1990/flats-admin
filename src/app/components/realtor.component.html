@@ -1,0 +1,29 @@
+<md-card>
+  <form *ngIf="realtor">
+    <md-card-content>
+
+      <md-input-container class="full-width">
+        <input md-input placeholder="ФИО" name="name" [(ngModel)]="realtor.fio">
+      </md-input-container>
+
+      <md-input-container class="full-width">
+        <textarea md-input placeholder="Описание" name="description" [(ngModel)]="realtor.description"></textarea>
+      </md-input-container>
+
+      <md-input-container>
+        <input md-input placeholder="Телефон" name="phone" [(ngModel)]="realtor.phone">
+      </md-input-container>
+
+      <md-input-container>
+        <input md-input placeholder="Фото" name="photo" [(ngModel)]="realtor.photo">
+      </md-input-container>
+
+      <md-card-actions class="button-row">
+        <button md-raised-button color="accent" (click)="back()">Назад</button>
+        <button md-raised-button color="primary" (click)='saveRealtor()'>Сохранить</button>
+      </md-card-actions>
+
+    </md-card-content>
+    
+  </form>
+</md-card>
